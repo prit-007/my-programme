@@ -15,9 +15,8 @@ import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Sidebar from './Sidebar';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -34,20 +33,20 @@ function Layout2(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {['A D D P E R S O N', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <Link to={"/addPerson"}><ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </ListItem>
+          </ListItem></Link>
         ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['A D D P E R S O N', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -83,7 +82,7 @@ function Layout2(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Sidebar /> 
+          <Sidebar />
         </Toolbar>
       </AppBar>
       <Box

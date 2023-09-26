@@ -29,7 +29,7 @@ function Aadmi() {
   return (<>
     <Paper elevation={0}>
       <ThemeProvider theme={darkTheme}>
-        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+        <Grid container key={data.id} rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
           {formattedData}
         </Grid>
       </ThemeProvider>

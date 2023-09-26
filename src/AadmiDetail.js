@@ -1,6 +1,7 @@
-import { Box, Button, Card, CardContent, CardHeader, CardMedia, Divider, Grid, List, ListItem, ListItemText, Paper } from '@mui/material'
-import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Box, Button, Card, CardContent, CardHeader, CardMedia, Divider, Grid, List, ListItem, ListItemText, Stack, Typography } from '@mui/material'
+import React, { useEffect } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const AadmiDetail = () => {
     const navigate = useNavigate()
@@ -9,20 +10,26 @@ const AadmiDetail = () => {
     const api = "https://64f62b512b07270f705e3d40.mockapi.io/Prit-v-007/Employee"
 
     const deleteItem = () => {
-        fetch(api + "/" + param.id, {
+        fetch(
+            api + "/" + param.id, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             }
         })
-          .then(res => res.json())
-          .then(data => {
+            .then(res => res.json())
+            .then(data => {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                  'success'
+                ) 
                 navigate("/");
             })
     }
-    
-    React.useEffect(() => {
+
+    useEffect(() => {
         fetch(api + "/" + param.id)
             .then(res => res.json())
             .then(data => setData(data))
@@ -45,14 +52,29 @@ const AadmiDetail = () => {
                         <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
                             <CardContent >
                                 <List>
-                                    <ListItem><ListItemText primary={"firstName : " + data.firstName} /></ListItem>
-                                    <Divider />
-                                    {/* ... other list items ... */}
+                                    <ListItem ><ListItemText primary={<h2>"firstName : " + {data.firstName}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"lastName : " + {data.lastName}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"mobileNumber : " + {data.mobileNumber}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"address : " + {data.address}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"fbAvatar : " + {data.fbAvatar}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"accountBalance : " + {data.accountBalance}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"age : " + {data.age}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"expireince : " + {data.expireince}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"image : " + {data.image}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"Detail : " + {data.Detail}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>"id : " + {data.id}</h2>} /></ListItem><Divider />
                                 </List>
-                                <Button variant='outlined' onClick={()=>{navigate("/")}}>Back</Button>
-                                <Button aria-label="Delete Component" variant="outlined" color="error" onClick={deleteItem}>
-                                    DELETE
-                                </Button>
+
+                                <Stack direction="row" spacing={2}>
+                                    <Button variant='outlined' onClick={() => { navigate("/") }}>Back</Button>
+                                    <Button aria-label="Delete Component" variant="outlined" color="error" onClick={deleteItem}>
+                                        DELETE
+                                    </Button>
+                                    <Link to={"/editPerson/" + data.id}><Button aria-label="Delete Component" variant="contained" color="secondary">
+                                        EDIT
+                                    </Button></Link>
+                                </Stack>
+
                             </CardContent>
                         </Box>
                     </Grid>
