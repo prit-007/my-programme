@@ -70,7 +70,7 @@ const AadmiDetail = () => {
                                     <Button aria-label="Delete Component" variant="outlined" color="error" onClick={deleteItem}>
                                         DELETE
                                     </Button>
-                                    <Link to={"/editPerson/" + data.id}><Button aria-label="Delete Component" variant="contained" color="secondary">
+                                    <Link to={"/editPerson/" + data._id}><Button aria-label="Delete Component" variant="contained" color="secondary">
                                         EDIT
                                     </Button></Link>
                                 </Stack>

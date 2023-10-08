@@ -33,20 +33,29 @@ function Layout2(props) {
       <Toolbar />
       <Divider />
       <List>
-        {['A D D P E R S O N', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <Link to={"/addPerson"}><ListItem key={text} disablePadding>
+        <Link to={"/addPerson"}><ListItem disablePadding>
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary={'A D D P E R S O N'} />
+          </ListItemButton>
+        </ListItem></Link>
+        <Divider />
+        {['Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-          </ListItem></Link>
+          </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {['A D D P E R S O N', 'Trash', 'Spam'].map((text, index) => (
+        {['P E R S O N S', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>

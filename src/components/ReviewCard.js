@@ -100,12 +100,12 @@ export default function ReviewCard({ object,deleteItem }) {
                     </CardContent>
                     <CardActions disableSpacing>
                         <Typography marginRight={3} marginLeft={2}>
-                            <Button  onClick={()=>{deleteItem(object.id)}} aria-label="Delete Component" variant="outlined" color="error">
+                            <Button  onClick={()=>{deleteItem(object._id)}} aria-label="Delete Component" variant="outlined" color="error">
                                 DELETE
                             </Button>
                         </Typography>
                         <IconButton aria-label="share">
-                            <Link to={"/details/person/id/" + object.id} color="inherit"><FavoriteIcon /></Link>
+                            <Link to={"/details/person/id/" + object._id} color="inherit"><FavoriteIcon /></Link>
                         </IconButton>
                         <ExpandMore
                             expand={expanded}

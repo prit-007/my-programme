@@ -18,7 +18,7 @@ function Aadmi() {
   }, [])
   const deleteItem = (id) => {
     fetch(api + "/" + id, { method: "Delete" })
-      .then((res) => { setData(data.filter((f)=>{return f.id !== id})) })
+      .then((res) => { setData(data.filter((f)=>{return f._id !== id})) })
   }
   const formattedData = data.map(
     (t) => {
@@ -30,7 +30,7 @@ function Aadmi() {
   return (<>
     <Paper elevation={0}>
       <ThemeProvider theme={darkTheme}>
-        <Grid container key={data.id} rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+        <Grid container key={data._id} rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
           {formattedData}
         </Grid>
       </ThemeProvider>
