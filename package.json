@@ -1,4 +1,5 @@
 {
+  "homepage": "https://livedtermined.github.io/my-programme",
   "name": "my-programme",
   "version": "0.1.0",
   "private": true,
@@ -20,7 +21,6 @@
     "sweetalert2": "^11.7.31",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://prit-007.github.io/my-programme",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
