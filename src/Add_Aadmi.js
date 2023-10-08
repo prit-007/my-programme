@@ -4,8 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddAadmi = () => {
-    const api = "https://64f62b512b07270f705e3d40.mockapi.io/Prit-v-007/Employee"
-    const [data, setData] = useState({
+  const api = "http://localhost:1969"
+  const [data, setData] = useState({
         firstName: '',
         lastName: '',
         mobileNumber: '',

@@ -7,7 +7,7 @@ const AadmiDetail = () => {
     const navigate = useNavigate()
     const param = useParams()
     const [data, setData] = React.useState({})
-    const api = "https://64f62b512b07270f705e3d40.mockapi.io/Prit-v-007/Employee"
+    const api = "http://localhost:1969"
 
     const deleteItem = () => {
         fetch(
@@ -52,17 +52,17 @@ const AadmiDetail = () => {
                         <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
                             <CardContent >
                                 <List>
-                                    <ListItem ><ListItemText primary={<h2>"firstName : " + {data.firstName}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"lastName : " + {data.lastName}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"mobileNumber : " + {data.mobileNumber}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"address : " + {data.address}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"fbAvatar : " + {data.fbAvatar}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"accountBalance : " + {data.accountBalance}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"age : " + {data.age}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"expireince : " + {data.expireince}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"image : " + {data.image}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"Detail : " + {data.Detail}</h2>} /></ListItem><Divider />
-                                    <ListItem ><ListItemText primary={<h2>"id : " + {data.id}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>firstName :  {data.firstName}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>lastName :  {data.lastName}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>mobileNumber :  {data.mobileNumber}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>address :  {data.address}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>fbAvatar :  {data.fbAvatar}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>accountBalance :  {data.accountBalance}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>age :  {data.age}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>expireince :  {data.expireince}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>image :  {data.image}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>Detail :  {data.Detail}</h2>} /></ListItem><Divider />
+                                    <ListItem ><ListItemText primary={<h2>id :  {data.id}</h2>} /></ListItem><Divider />
                                 </List>
 
                                 <Stack direction="row" spacing={2}>

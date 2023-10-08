@@ -11,7 +11,8 @@ const darkTheme = createTheme({ palette: { mode: 'dark' } })
 
 function Aadmi() {
   const [data, setData] = useState([])
-  const api = "https://64f62b512b07270f705e3d40.mockapi.io/Prit-v-007/Employee"
+  const api = "http://localhost:1969"
+
   useEffect(() => {
     fetch(api).then((res) => { return res.json() }).then((res) => { setData(res) });
   }, [])
